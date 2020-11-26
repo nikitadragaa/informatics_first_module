@@ -1,0 +1,16 @@
+def symbols_checker(email):
+	prohibited="!#$%&'*+-/=?^_`{|}~"
+	for symbol in email:
+		if symbol in prohibited:
+			return False
+	return True 
+
+email=input("enter email")
+if "@" in email and "." in email and symbols_checker(email):
+	user_name=email.split("@")[0]
+	domen=email.split(".")[1]
+	
+	if user_name is not None and domen is not None:
+		print("adress is valid")
+else:
+	print("adress is not valid") 
